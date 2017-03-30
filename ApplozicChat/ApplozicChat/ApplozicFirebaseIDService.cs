@@ -10,7 +10,7 @@ namespace ApplozicChat
 {
 	[Service]
 	[IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
-	public class ApplozicFirebaseIIDService : FirebaseInstanceIdService
+	public class ApplozicFirebaseIDService : FirebaseInstanceIdService
 	{
 		const string TAG = "MyFirebaseIIDService";
 	
