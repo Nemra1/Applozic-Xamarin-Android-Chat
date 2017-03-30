@@ -178,6 +178,6 @@ public override void OnMessageReceived(RemoteMessage message)
 
 ### UI customisations from settings:
 
-For possible UICustomisations, please vist our Android Documentaion page below:
+For possible UICustomisations, please vist our Android Documentation page below:
 
 https://www.applozic.com/docs/android-chat-sdk.html#customization
