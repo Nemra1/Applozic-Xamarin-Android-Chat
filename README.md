@@ -7,9 +7,9 @@ Applozic chat in native Xamarin Android.
 
 #### STEP 1: Add DLLs as reference:
 
-- Add DLLs as references in .net assemblies present in lib-dll folder.
+ Add DLLs as references in .net assemblies present in lib-dll folder.
 
- Your Solution --> References --> Edit References --> .Net Assembly--> Browse and add all dlls from lib-dll folder.
+ ***Your Solution --> References --> Edit References --> .Net Assembly--> Browse and add all dlls from lib-dll folder.***
  
 
 #### STEP 2: Add helper class:
@@ -127,13 +127,13 @@ ChatManger.SendRegistrationToServer(refreshedToken);
 **Example:**
 ```
 public override void OnTokenRefresh()
-		{
-			var refreshedToken = FirebaseInstanceId.Instance.Token;
-			Log.Debug(TAG, "Refreshed token: " + refreshedToken);
+{
+	var refreshedToken = FirebaseInstanceId.Instance.Token;
+	Log.Debug(TAG, "Refreshed token: " + refreshedToken);
       //Send token to applozic server..
-			ApplozicChatManager ChatManger = new ApplozicChatManager(this);
-			ChatManger.SendRegistrationToServer(refreshedToken);
-		}
+	ApplozicChatManager ChatManger = new ApplozicChatManager(this);
+	ChatManger.SendRegistrationToServer(refreshedToken);
+}
 ```
 
 ii ) Receving and passing applozic notiifcations to SDK:
@@ -143,37 +143,35 @@ In your FirebaseMessagingService implementation class's OnMessageReceived method
 ```
 //ADD below as a first code in OnMessageReceived.
 if (message.Data.Count >0 )
-			{
-				if (MobiComPushReceiver.IsMobiComPushNotification(message.Data))
-				{
-					Log.Info(TAG, "Applozic notification processing...");
-					MobiComPushReceiver.ProcessMessageAsync(this, message.Data);
-					return;
-				}
-			}
+{
+  if (MobiComPushReceiver.IsMobiComPushNotification(message.Data))
+    {
+	Log.Info(TAG, "Applozic notification processing...");
+	MobiComPushReceiver.ProcessMessageAsync(this, message.Data);
+	return;
+    }
+}
       
 ```
 
-**Example***
+**Example**
 
 ```
 public override void OnMessageReceived(RemoteMessage message)
+{
+	Log.Debug(TAG, "From: " + message.From);
+	Log.Debug(TAG, "Notification Message Body: " + message.Data);
+	Log.Info(TAG, "Message data:" + message.Data);
+	if (message.Data.Count >0 )
+	{
+		if (MobiComPushReceiver.IsMobiComPushNotification(message.Data))
 		{
-			Log.Debug(TAG, "From: " + message.From);
-			Log.Debug(TAG, "Notification Message Body: " + message.Data);
-
-			Log.Info(TAG, "Message data:" + message.Data);
-
-			if (message.Data.Count >0 )
-			{
-				if (MobiComPushReceiver.IsMobiComPushNotification(message.Data))
-				{
-					Log.Info(TAG, "Applozic notification processing...");
-					MobiComPushReceiver.ProcessMessageAsync(this, message.Data);
-					return;
-				}
-			}
+			Log.Info(TAG, "Applozic notification processing...");
+			MobiComPushReceiver.ProcessMessageAsync(this, message.Data);
+			return;
 		}
+	}
+}
 ```
 
 ### UI customisations from settings:
