@@ -87,7 +87,7 @@ chatManager.LaunchChatWithUser(<USER_ID>);
 
 #### STEP 5: Push Notification Setup:
 
-**a) I do not have pushnotification setup:**
+**a) I do not have push notification setup:**
 
  i) Add [ApplozicFirebaseIDService.cs](https://raw.githubusercontent.com/AppLozic/Applozic-Xamarin-Android-Chat/master/ApplozicChat/ApplozicChat/ApplozicFirebaseIDService.cs) to your project.
 
@@ -107,15 +107,15 @@ ii) Declare the Receiver in the AndroidManifest.
     
 ```
 
-iii) Add google-service.json file to your project root directory, add to project and set build Build Action to GoogleServicesJson. 
+iii) Add google-service.json file to your project root directory, add to project and set *Build Action* to GoogleServicesJson. 
 
 Help Link: https://developer.xamarin.com/guides/android/application_fundamentals/notifications/remote-notifications-with-fcm/#Add_the_Google_Services_JSON_File
 
 
 
-**b) I have Pushnotification setup:**
+**b) I have Push notification setup:**
 
-i) Send pushnotification token to Applozic server:
+i) Send push notification token to Applozic server:
 
 In your FirebaseInstanceIdService implementation class's OnTokenRefresh method send token to Applozic server. 
 
@@ -136,7 +136,7 @@ public override void OnTokenRefresh()
 }
 ```
 
-ii ) Receving and passing applozic notiifcations to SDK:
+ii ) Receving and passing Applozic notiifcations to SDK:
 
 In your FirebaseMessagingService implementation class's OnMessageReceived method, check if notification belongs to Applozic.
 
