@@ -1,5 +1,5 @@
 
-# applozic-xamarin-android
+# Applozic-Xamarin-Android-Chat
 Applozic chat in native Xamarin Android.
 
 
