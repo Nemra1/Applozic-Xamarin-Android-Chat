@@ -24,7 +24,7 @@ https://www.applozic.com/docs/android-chat-sdk.html#step-2-androidmanifest
 
 i) Register/Login User:
 
-ApplozicChatManger provide convenient method to register user with Applozic. You need to pass UserLoginListener reference which have login success/failure events callbacks.
+ApplozicChatManger provides convenient method to register user with Applozic. You need to pass UserLoginListener reference which have login success/failure events callbacks.
 
 ```    
 private UserLoginListener loginListener = new UserLoginListener();
@@ -89,7 +89,7 @@ chatManager.LaunchChatWithUser(<USER_ID>);
 
 **a) I do not have pushnotification setup:**
 
- i) Add ApplozicFirebaseIIDService.cs to your project.
+ i) Add [ApplozicFirebaseIDService.cs](https://raw.githubusercontent.com/AppLozic/Applozic-Xamarin-Android-Chat/master/ApplozicChat/ApplozicChat/ApplozicFirebaseIDService.cs) to your project.
 
 ii) Declare the Receiver in the AndroidManifest.
 ```
@@ -138,7 +138,7 @@ public override void OnTokenRefresh()
 
 ii ) Receving and passing applozic notiifcations to SDK:
 
-In your FirebaseMessagingService implementation class's OnMessageReceived method, check if notification belogs to Applozic.
+In your FirebaseMessagingService implementation class's OnMessageReceived method, check if notification belongs to Applozic.
 
 ```
 //ADD below as a first code in OnMessageReceived.
