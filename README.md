@@ -14,7 +14,7 @@ Applozic chat in native Xamarin Android.
 
 #### STEP 2: Add helper class:
 
-Add Helper class [ApplozicChatManager.cs](https://raw.githubusercontent.com/adarshmishra/applozic-xamarin-android/master/ApplozicChat/ApplozicChat/ApplozicChatManager.cs) in your main project. 
+Add Helper class [ApplozicChatManager.cs](https://raw.githubusercontent.com/AppLozic/Applozic-Xamarin-Android-Chat/master/ApplozicChat/ApplozicChat/ApplozicChatManager.cs) in your main project. 
 
 #### STEP 3: AndroidManifest changes 
 
