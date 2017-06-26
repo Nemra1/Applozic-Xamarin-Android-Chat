@@ -5,14 +5,14 @@ Applozic chat in native Xamarin Android.
 
 # Applozic SDK Integration Steps:
 
-#### STEP 1: Add DLLs as reference:
+#### STEP 1: Add DLLs as reference
 
  Add DLLs as references in .net assemblies present in lib-dll folder.
 
  ***Your Solution --> References --> Edit References --> .Net Assembly--> Browse and add all dlls from lib-dll folder.***
  
 
-#### STEP 2: Add helper class:
+#### STEP 2: Add helper class
 
 Add Helper class [ApplozicChatManager.cs](https://raw.githubusercontent.com/AppLozic/Applozic-Xamarin-Android-Chat/master/ApplozicChat/ApplozicChat/ApplozicChatManager.cs) in your main project. 
 
@@ -65,7 +65,7 @@ user.AuthenticationTypeId = new Short("1");
 ApplozicChatManager chatManager = new ApplozicChatManager(this);
 chatManager.RegisterUser( user,loginListener);
 ```
-#### STEP 4: Launch chat:
+#### STEP 4: Launch chat
 
 Use ApplozicChatManager methods to launch different type of chats:
 
@@ -85,7 +85,7 @@ chatManager.LaunchChatWithUser(<USER_ID>);
 
 ```
 
-#### STEP 5: Push Notification Setup:
+#### STEP 5: Push Notification Setup
 
 **a) I do not have push notification setup:**
 
@@ -174,7 +174,7 @@ public override void OnMessageReceived(RemoteMessage message)
 }
 ```
 
-### UI customisations from settings:
+### UI customisations from settings
 
 For possible UICustomisations, please vist our Android Documentation page below:
 
