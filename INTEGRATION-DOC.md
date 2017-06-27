@@ -105,7 +105,7 @@ ii) Declare the Receiver in the AndroidManifest.
 
 iii) Add google-service.json file to your project root directory, add to project and set *Build Action* to GoogleServicesJson. 
 
-Help Link: https://developer.xamarin.com/guides/android/application_fundamentals/notifications/remote-notifications-with-fcm/#Add_the_Google_Services_JSON_File
+Help Link: [Add the Google Services JSON File](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/remote-notifications-with-fcm/#Add_the_Google_Services_JSON_File)
 
 
 
