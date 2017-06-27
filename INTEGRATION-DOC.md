@@ -1,5 +1,5 @@
 
-# Applozic SDK Integration Steps:
+### Applozic SDK Integration Steps:
 
 #### STEP 1: Add DLLs as reference
 
