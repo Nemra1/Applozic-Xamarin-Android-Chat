@@ -4,55 +4,55 @@ using Android.OS;
 using Applozic;
 using Firebase.Iid;
 using Android.Util;
+using System;
 
 
 namespace ApplozicChat
 {
-	[Activity(Label = "Applozic Chat")]
-	public class MainActivity : Activity
-	{
+    [Activity(Label = "Applozic Chat")]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
 
-		protected override void OnCreate(Bundle savedInstanceState)
-		{
-			base.OnCreate(savedInstanceState);
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
+            
+        ApplozicChatManager chatManager = new ApplozicChatManager(this);
+      
+            // Get our button from the layout resource,
+            // and attach an event to it
+            Button launchChatList = FindViewById<Button>(Resource.Id.launch_chat_list);
+            Button launchOneToOneChat = FindViewById<Button>(Resource.Id.launch_one_to_one_chat);
+            Button logout = FindViewById<Button>(Resource.Id.logout);
 
-			// Set our view from the "main" layout resource
-			SetContentView(Resource.Layout.Main);
+                launchChatList.Click += delegate
+            {
+                Log.Debug("ApplozicChat", "InstanceID token: " + FirebaseInstanceId.Instance.Token);
+                chatManager.LaunchChatList();
 
-			ApplozicChatManager chatManager = new ApplozicChatManager(this);
+            };
+            launchOneToOneChat.Click += delegate
+            {
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button launchChatList = FindViewById<Button>(Resource.Id.launch_chat_list);
-			Button launchOneToOneChat = FindViewById<Button>(Resource.Id.launch_one_to_one_chat);
-			Button logout = FindViewById<Button>(Resource.Id.logout);
+                chatManager.LaunchChatWithUser("ak02");
 
-			launchChatList.Click += delegate
-			{
-				Log.Debug("ApplozicChat", "InstanceID token: " + FirebaseInstanceId.Instance.Token);
-				chatManager.LaunchChatList();
+            };
+            logout.Click += delegate
+            {
+                UserLogoutListener logoutListener = new UserLogoutListener();
+                logoutListener.OnLogoutSucessHandler += (context) =>
+                {
+                    context.StartActivity(typeof(LoginActivity));
+                    this.Finish();
+                };
+                chatManager.Logout(logoutListener);
 
-			};
-			launchOneToOneChat.Click += delegate
-			{
+            };
 
-				chatManager.LaunchChatWithUser("ak02");
-
-			};
-			logout.Click += delegate
-			{
-				UserLogoutListener logoutListener = new UserLogoutListener();
-				logoutListener.OnLogoutSucessHandler += (context) =>
-				{
-					context.StartActivity(typeof(LoginActivity));
-					this.Finish();
-				}; 
-				chatManager.Logout(logoutListener);
-
-			};
-
-		}
-	}
+        }
+    }
 
 }
 
