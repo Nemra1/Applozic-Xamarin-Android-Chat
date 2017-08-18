@@ -10,7 +10,6 @@ namespace Applozic
     public class ApplozicChatManager
     {
         Context context;
-        System.String CONTACTS_GROUP_ID = "CONTACTS_GROUP_ID";
         public ApplozicChatManager(Context context)
         {
             this.context = context;
@@ -59,15 +58,11 @@ namespace Applozic
 		 * This is the example of shows
 		 * 
 		 */
-        public void LaunchChatList(System.String contactGroupId)
+        public void LaunchChatList()
         {
             //context.StartActivity(typeof(Com.Applozic.Mobicomkit.Uiwidgets.Conversation.Activity.ConversationActivity));
             // Android.Util.Log.Debug("inside1", contactGroupId);
             Intent myIntent = new Intent(context, typeof(Com.Applozic.Mobicomkit.Uiwidgets.Conversation.Activity.ConversationActivity));
-            if (contactGroupId != null)
-            {
-                myIntent.PutExtra(CONTACTS_GROUP_ID, contactGroupId);
-            }
             context.StartActivity(myIntent);
         }
         /**

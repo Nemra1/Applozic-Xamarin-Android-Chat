@@ -19,7 +19,7 @@ namespace ApplozicChat
             this.context = context;
 
         }
-        public void AddMember(Context context , String contactGroupId ,String contactGroupType , String contactGroupMember , AddMemberListner addMemberListner)
+        public void AddMemberToContactGroup(Context context , String contactGroupId ,String contactGroupType , String contactGroupMember , AddMemberListner addMemberListner)
         {
             this.context = context;
             System.Console.WriteLine(contactGroupId +" ::",contactGroupType + "::" , contactGroupMember);
