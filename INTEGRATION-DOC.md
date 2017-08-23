@@ -18,6 +18,8 @@ Add activity, Services, permissions and meta-data required for applozic in your 
 
 https://www.applozic.com/docs/android-chat-sdk.html#step-2-androidmanifest
 
+***NOTE: replace ${applicationId} with your package name.***
+
 i) Register/Login User:
 
 ApplozicChatManger provides convenient method to register user with Applozic. You need to pass UserLoginListener reference which have login success/failure events callbacks.
