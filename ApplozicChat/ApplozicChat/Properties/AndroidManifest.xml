@@ -76,6 +76,7 @@
 		<service android:name="com.applozic.mobicomkit.api.people.UserIntentService" android:exported="false" />
 		<service android:name="com.applozic.mobicomkit.api.conversation.ConversationIntentService" android:exported="false" />
 		<service android:name="com.applozic.mobicomkit.api.conversation.ConversationReadService" android:exported="false" />
+		<service android:name="com.applozic.mobicomkit.uiwidgets.notification.NotificationIntentService" android:exported="false" />
 		<receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.TIME_SET" />
