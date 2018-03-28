@@ -19,51 +19,51 @@ namespace ApplozicChat
             this.context = context;
 
         }
-        public void AddMemberToContactGroup(Context context , String contactGroupId ,String contactGroupType , String contactGroupMember , AddMemberListner addMemberListner)
-        {
-            this.context = context;
-            System.Console.WriteLine(contactGroupId +" ::",contactGroupType + "::" , contactGroupMember);
-            Java.Lang.Void[] args = null;
-            List<String> groupMemberList = new List<String>();
-            groupMemberList.Add(contactGroupMember);
-            new ApplozicAddMemberToContactGroupTask(context, contactGroupId, contactGroupType, groupMemberList, addMemberListner).Execute(args);
+        //public void AddMemberToContactGroup(Context context , String contactGroupId ,String contactGroupType , String contactGroupMember , AddMemberListner addMemberListner)
+        //{
+        //    this.context = context;
+        //    System.Console.WriteLine(contactGroupId +" ::",contactGroupType + "::" , contactGroupMember);
+        //    Java.Lang.Void[] args = null;
+        //    List<String> groupMemberList = new List<String>();
+        //    groupMemberList.Add(contactGroupMember);
+        //    new ApplozicAddMemberToContactGroupTask(context, contactGroupId, contactGroupType, groupMemberList, addMemberListner).Execute(args);
         
-        }
+        //}
     }
 
 
-    public class AddMemberListner : Java.Lang.Object, ApplozicAddMemberToContactGroupTask.IGroupMemberListener
-    {
+    //public class AddMemberListner : Java.Lang.Object, ApplozicAddMemberToContactGroupTask.IGroupMemberListener
+    //{
 
 
-        public delegate void OnAddMemberSucess(bool response, Context context);
-        public delegate void OnAddMemberFailed(bool response, Java.Lang.Exception e , Context context);
-        public event OnAddMemberSucess OnAddMemberSucessHandler;
-        public event OnAddMemberFailed OnAddMemberFailedHandler;
+    //    public delegate void OnAddMemberSucess(bool response, Context context);
+    //    public delegate void OnAddMemberFailed(bool response, Java.Lang.Exception e , Context context);
+    //    public event OnAddMemberSucess OnAddMemberSucessHandler;
+    //    public event OnAddMemberFailed OnAddMemberFailedHandler;
 
-        public void OnSuccess(bool res, Context context)
-        {
-            //Send call back to caller
+    //    public void OnSuccess(bool res, Context context)
+    //    {
+    //        //Send call back to caller
             
 
-            if (OnAddMemberSucessHandler != null)
-            {
-                OnAddMemberSucessHandler(res, context);
-            }
+    //        if (OnAddMemberSucessHandler != null)
+    //        {
+    //            OnAddMemberSucessHandler(res, context);
+    //        }
 
-            System.Console.WriteLine("Successfully Added"+ res);
+    //        System.Console.WriteLine("Successfully Added"+ res);
 
-        }
+    //    }
 
-        public void OnFailure(bool  res, Java.Lang.Exception e ,Context context)
-        {
+    //    public void OnFailure(bool  res, Java.Lang.Exception e ,Context context)
+    //    {
 
-            //Send call back to caller
-            if (OnAddMemberFailedHandler != null)
-            {
+    //        //Send call back to caller
+    //        if (OnAddMemberFailedHandler != null)
+    //        {
                
-                OnAddMemberFailedHandler(res, e , context);
-            }
-        }
-    }
+    //            OnAddMemberFailedHandler(res, e , context);
+    //        }
+    //    }
+    //}
 }

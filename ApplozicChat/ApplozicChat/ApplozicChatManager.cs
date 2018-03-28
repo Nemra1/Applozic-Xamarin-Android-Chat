@@ -33,7 +33,7 @@ namespace Applozic
         public void RegisterUser(string userId, string displayName, string password ,UserLoginListener userLoginListener)
         {
             // Build Applozic users..
-            var user = new ApplozicUser();
+            var user = new User();
             user.DisplayName = displayName;
             user.UserId = userId;
             user.Password = password;
@@ -46,10 +46,10 @@ namespace Applozic
         /*
 		 */
 
-        public void RegisterUser(ApplozicUser applozicUser, UserLoginListener userLoginListener)
+        public void RegisterUser(User applozicUser, UserLoginListener userLoginListener)
         {
             // Build Applozic users..
-
+                
             Java.Lang.Void[] args = null;
             new UserLoginTask(applozicUser, userLoginListener, context).Execute(args);
         }

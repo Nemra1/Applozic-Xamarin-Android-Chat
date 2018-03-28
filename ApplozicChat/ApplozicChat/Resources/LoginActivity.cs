@@ -16,7 +16,7 @@ namespace ApplozicChat
     {
 
         private UserLoginListener loginListener;
-        private AddMemberListner addMemberListner;
+        //private AddMemberListner addMemberListner;
         ApplozicContactService contactService;
         // String contactGroupId = "GroupName";        // Enable this and pass your GroupID here  
         EditText userName;
