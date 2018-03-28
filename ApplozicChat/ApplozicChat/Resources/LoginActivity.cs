@@ -16,9 +16,6 @@ namespace ApplozicChat
     {
 
         private UserLoginListener loginListener;
-        //private AddMemberListner addMemberListner;
-        ApplozicContactService contactService;
-        // String contactGroupId = "GroupName";        // Enable this and pass your GroupID here  
         EditText userName;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -28,7 +25,6 @@ namespace ApplozicChat
             loginListener = new UserLoginListener();
             loginListener.OnRegistrationSucessHandler += OnRegistrationSucessHandler;
             loginListener.OnRegistrationFailedHandler += OnRegistrationFailedHandler;
-            // AddMemberHandler();                    // Enable this method for its handler when adding members to contact group 
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.login_activity_layout);
@@ -61,14 +57,6 @@ namespace ApplozicChat
         void OnRegistrationSucessHandler(RegistrationResponse res, Context context)
         {
             System.Console.WriteLine("Successfully got callback in LoginActivity :" + res.Message);
-
-            // Enable  below commented code for adding member to contact group
-
-            /*  contactService = new ApplozicContactService(this);        
-               contactService.AddMemberToContactGroup(this, contactGroupId, (String)(Channel.GroupType.ContactGroup.Value), userName.Text, addMemberListner);
-               var applozicPref = Com.Applozic.Mobicomkit.Api.Account.User.MobiComUserPreference.GetInstance(context);
-               applozicPref.ContactsGroupId = contactGroupId;  */
-
             Intent myIntent = new Intent(this, typeof(MainActivity));
             this.StartActivity(myIntent);
             this.Finish();
@@ -96,14 +84,6 @@ namespace ApplozicChat
             Toast.MakeText(ApplicationContext, "Adding Failed : " + exception.Message, ToastLength.Long).Show();
         }
 
-        // Enable below commented code for adding contact group handler
-
-        /*    public void AddMemberHandler()
-            {
-                addMemberListner = new AddMemberListner();
-                addMemberListner.OnAddMemberSucessHandler += OnAddMemberSucessHandler;
-                addMemberListner.OnAddMemberFailedHandler += OnAddMemberFailedHandler;
-            } */
     }
 
 }
