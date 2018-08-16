@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ApplozicChat</RootNamespace>
     <AssemblyName>ApplozicChat</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
